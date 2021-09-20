@@ -5,14 +5,14 @@ pipeline {
       steps {
         echo 'Construyendo la App'
         sh 'sh run_build_script.sh'
-        slackSend(message: 'Se construyó la App de forma exitosa')
+        slackSend(message: 'Se construyo la App de forma exitosa')
       }
     }
 
     stage('Prueba de Linux') {
       steps {
         echo 'Realizando la Prueba de Linux'
-        sh 'sh run_linux_test.sh'
+        sh 'sh run_linux_tests.sh'
         slackSend(message: 'Se ha relizado la prueba de linux de forma exitosa')
       }
     }
@@ -23,7 +23,7 @@ pipeline {
         input 'Esta todo Ok para desplegar'
         timestamps() {
           echo 'Momento de Confirmacion del Ok Manual'
-          slackSend(message: 'Se ha relizado la confirmación manual de forma exitosa')
+          slackSend(message: 'Se ha relizado la confirmacion manual de forma exitosa')
         }
 
       }
@@ -32,7 +32,7 @@ pipeline {
     stage('Desplegando en Produccion') {
       steps {
         echo 'Desplegando en Produccion'
-        slackSend(message: 'Se ha desplegado en producción de forma exitosa')
+        slackSend(message: 'Se ha desplegado en produccion de forma exitosa')
       }
     }
 
