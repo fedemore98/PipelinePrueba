@@ -36,6 +36,7 @@ pipeline {
   post {
     always {
       slackSend(message: 'Message from Jenkins Pipeline')
+      slackSend(message: 'Message from Jenkins Pipeline2')
     }
 
   }
