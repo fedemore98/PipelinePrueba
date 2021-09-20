@@ -12,7 +12,7 @@ pipeline {
     stage('Prueba de Linux') {
       steps {
         echo 'Realizando la Prueba de Linux'
-        sh 'sh run_linux_tests.sh'
+        sh 'sh run_linux_test.sh'
         slackSend(message: 'Se ha relizado la prueba de linux de forma exitosa')
       }
     }
