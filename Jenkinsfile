@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo 'Construyendo la App'
         sh 'sh run_build_script.sh'
-        slackSend(message: 'Se construyó la App de forma exitosa')
+        slackSend(message: 'Se construyÃ³ la App de forma exitosa')
       }
     }
 
@@ -23,7 +23,7 @@ pipeline {
         input 'Esta todo Ok para desplegar'
         timestamps() {
           echo 'Momento de Confirmacion del Ok Manual'
-          slackSend(message: 'Se ha relizado la confirmación manual de forma exitosa')
+          slackSend(message: 'Se ha relizado la confirmaciÃ³n manual de forma exitosa')
         }
 
       }
@@ -32,7 +32,7 @@ pipeline {
     stage('Desplegando en Produccion') {
       steps {
         echo 'Desplegando en Produccion'
-        slackSend(message: 'Se ha desplegado en producción de forma exitosa')
+        slackSend(message: 'Se ha desplegado en producciÃ³n de forma exitosa')
       }
     }
 
@@ -41,6 +41,10 @@ pipeline {
     always {
       archiveArtifacts(artifacts: 'target/demoapp.jar', fingerprint: true)
       slackSend(message: 'Se ha generado el archivo JenkinsFile, y se ha realizado el push a GitHub')
+    }
+
+    failure {
+      slackSend(message: 'Ha fallado algunos de los pasos del Pipeline')
     }
 
   }
