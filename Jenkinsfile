@@ -29,7 +29,7 @@ pipeline {
     stage('Desplegando en Produccion') {
       steps {
         echo 'Desplegando en Produccion'
-        slackSend(message: 'Hola', color: 'danger', blocks: 'Fun', attachments: 'Fil')
+        slackSend(message: 'Hola', color: 'danger', blocks: 'Fun', attachments: 'Fil', username: 'federico.moreira@estudiantes.utec.edu.uy')
       }
     }
 
@@ -37,7 +37,7 @@ pipeline {
   post {
     always {
       archiveArtifacts(artifacts: 'target/demoapp.jar', fingerprint: true)
-      slackSend(color: 'good', message: "${env.JOB_NAME} - ${env.BUILD_DISPLAY_NAME} - Funcionó correctamente")
+      slackSend(color: 'good', message: "${env.JOB_NAME} - ${env.BUILD_DISPLAY_NAME} - FuncionÃ³ correctamente")
     }
 
     failure {
