@@ -29,7 +29,7 @@ pipeline {
     stage('Desplegando en Produccion') {
       steps {
         echo 'Desplegando en Produccion'
-        slackSend(message: 'Hola', color: 'danger', blocks: 'Fun', attachments: 'Fil', username: 'federico.moreira@estudiantes.utec.edu.uy')
+        slackSend(message: 'Hola', color: 'danger', blocks: 'Fun', attachments: 'Fil', username: 'federico.moreira@estudiantes.utec.edu.uy', channel: 'tallerdevops', iconEmoji: 'Hoo')
       }
     }
 
