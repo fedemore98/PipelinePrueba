@@ -29,6 +29,7 @@ pipeline {
     stage('Desplegando en Produccion') {
       steps {
         echo 'Desplegando en Produccion'
+        slackSend(message: 'Se ha generado el archivo JenkinsFile, y se ha realizado el push a GitHub')
       }
     }
 
