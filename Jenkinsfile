@@ -39,7 +39,7 @@ pipeline {
     }
 
     failure {
-      mail(to: 'federico.moreira@estudiantes.utec.edu.uy', subject: "Failed Pipeline ${currentBuild.fullDisplayName}", body: "For details about the failure, see ${env.BUILD_URL}")
+      slackSend(color: 'danger', message: "${env.JOB_NAME} - ${env.BUILD_DISPLAY_NAME} - Hubo un problema con el deploy")
     }
 
   }
