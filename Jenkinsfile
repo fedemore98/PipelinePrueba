@@ -36,8 +36,7 @@ pipeline {
   }
   post {
     always {
-      archiveArtifacts(artifacts: 'target/demoapp.jar', fingerprint: true)
-      slackSend(color: 'good', message: "${env.JOB_NAME} - ${env.BUILD_DISPLAY_NAME} - Funcionó correctamente")
+      slackSend(color: 'good', message: "${env.JOB_NAME} - ${env.BUILD_DISPLAY_NAME} - Funciona correctamente")
     }
 
   }
