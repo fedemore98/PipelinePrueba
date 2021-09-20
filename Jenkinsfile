@@ -36,8 +36,7 @@ pipeline {
   post {
     always {
       archiveArtifacts(artifacts: 'target/demoapp.jar', fingerprint: true)
-      slackSend(message: 'Message from Jenkins Pipeline')
-      slackSend(message: 'Message from Jenkins Pipeline2')
+      slackSend(message: 'Se ha generado el archivo JenkinsFile, y se ha realizado el push a GitHub')
     }
 
   }
