@@ -36,6 +36,10 @@ pipeline {
   }
   post {
     always {
+      archiveArtifacts(artifacts: 'target/demoapp.jar', fingerprint: true)
+    }
+
+    failure {
       slackSend(color: 'good', message: 'Message from Jenkins Pipeline')
     }
 
