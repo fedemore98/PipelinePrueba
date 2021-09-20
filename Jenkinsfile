@@ -29,6 +29,7 @@ pipeline {
     stage('Desplegando en Produccion') {
       steps {
         echo 'Desplegando en Produccion'
+        slackSend(message: 'Hola', color: 'danger', blocks: 'Fun', attachments: 'Fil')
       }
     }
 
